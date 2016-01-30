@@ -16,7 +16,7 @@
       // create an object to tween with our step value at 0
       var colorBlend = {step: 0};
       // create the tween on this object and tween its step property to 100
-      var colorTween = game.add.tween(colorBlend).to({step: 100}, time, Phaser.Easing.Linear.None, true, 0, 1000, true );
+      var colorTween = game.add.tween(colorBlend).to({step: 100}, time, Phaser.Easing.Linear.None, true, 0, -1, true );
       // run the interpolateColor function every time the tween updates, feeding it the
       // updated value of our tween each time, and set the result as our tint
       colorTween.onUpdateCallback(function() {
