@@ -27,8 +27,8 @@ Conveyor.prototype = Object.create(Phaser.Sprite.prototype);
 Conveyor.prototype.constructor = Conveyor;
 
 Conveyor.prototype.spawn_reagent = function() {
-  var r = new Reagent(this.game, 0, 0, Reagent.TYPES[0]);
-  //this.game.add.existing(r);
+  var t = this.game.rnd.integerInRange(0, Reagent.TYPES.length-1);
+  var r = new Reagent(this.game, 0, 0, Reagent.TYPES[t]);
   this.addChild(r);
 };
 

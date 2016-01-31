@@ -1,3 +1,38 @@
+var ReagentPointer = this.ReagentPointer = function(basis) {
+  console.log("pointer", basis);
+  Phaser.Sprite.call(this, basis.game, basis.x, basis.y, basis.key);
+  this.anchor.setTo(0.5, 0.5);
+  this.alpha = 0.5;
+  this.state = "on";
+  this.inputEnabled = true;
+  this.events.onInputUp.add(
+    function () {
+      this.destroy();
+    },
+    this
+  );
+};
+
+ReagentPointer.prototype = Object.create(Phaser.Sprite.prototype);
+ReagentPointer.prototype.constructor = ReagentPointer;
+
+ReagentPointer.prototype.update = function () {
+  switch (this.state) {
+    case "on":
+      if (game.input.activePointer.isUp) {
+        this.state = "up";
+      } else {
+        this.x = this.game.input.activePointer.x*2;
+        this.y = this.game.input.activePointer.y*2;
+      }
+      break;
+    case "up":
+      this.destroy();
+      break;
+  }
+};
+
+this.reagent_pointer = null;
 
 (function() {
   function init(game) {
