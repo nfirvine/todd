@@ -40,7 +40,7 @@ Reagent.prototype.update = function() {
         //TODO: next steps
         //this.state = "falling";
       } else {
-        this.x += 5;
+        this.x += 2;
       }
       break;
   }

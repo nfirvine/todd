@@ -38,7 +38,7 @@ Conveyor.prototype.init_timer = function() {
     this.init_timer();
   };
 
-  this.timer = game.time.events.add((1+this.game.rnd.realInRange(0, 2))*Phaser.Timer.SECOND, callback, this);
+  this.timer = game.time.events.add((3+this.game.rnd.realInRange(0, 7))*Phaser.Timer.SECOND, callback, this);
 };
 
 Conveyor.prototype.update = function() {
