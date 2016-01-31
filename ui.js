@@ -16,12 +16,9 @@
   function create(game) {
     background = game.add.sprite(0,0, 'background');
     layers.background.add(background);
-    background.scale.setTo(0.5, 0.5);
-    trash_bin = game.add.sprite(250, 650, 'trash_bin');
-    trash_bin.scale.setTo(0.5, 0.5);
+    trash_bin = game.add.sprite(500, 1300, 'trash_bin');
     layers.ui.add(trash_bin);
-    bomb_hole = game.add.sprite(700, 650, 'bomb_hole');
-    bomb_hole.scale.setTo(0.5, 0.5);
+    bomb_hole = game.add.sprite(1400, 1300, 'bomb_hole');
     layers.ui.add(bomb_hole);
   }
 

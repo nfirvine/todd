@@ -28,8 +28,9 @@
     }
     console.log('altar create');
     //300x150
-    altar = game.add.sprite(game.world.centerX, game.world.centerY/4, 'altar');
+    altar = game.add.sprite(game.world.centerX, 300, 'altar');
     altar.anchor.setTo(0.5, 0.5);
+    altar.scale.setTo(2,2);
     star = game.make.sprite(0, 0, 'star');
     star.anchor.setTo(0.5, 0.5);
     altar.addChild(star);

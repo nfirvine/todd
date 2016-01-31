@@ -32,7 +32,9 @@ window.onload = function() {
     }
 
     function create () {
-      console.log('world', game.world);
+      game.world.width = 1024*2;
+      game.world.height = 768*2;
+      game.world.scale.setTo(0.5, 0.5);
       layers = {
         'background': game.add.group(),
         'foreground': game.add.group(),
