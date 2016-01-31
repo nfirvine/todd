@@ -6,7 +6,7 @@
 
   function preload(game) {
     console.log('altar preload');
-    game.load.atlasJSONHash('altar', 'assets/dej_animations.png', 'assets/dej_animations.json');
+    game.load.atlasJSONHash('anim', 'assets/dej_animations.png', 'assets/dej_animations.json');
 
   }
 
@@ -27,11 +27,20 @@
     // }
     console.log('altar create');
     //300x150
-    altar = game.add.sprite(825, 250, 'anim', 'altar_animation/altar_animation0001.png');
+    altar = game.add.sprite(game.world.centerX, 425, 'anim', 'altar_animation/altar_animation0001.png');
     altar.animations.add('glow', Phaser.Animation.generateFrameNames('altar_animation/altar_animation', 1, 78, '.png', 4), 19, true, false);
     altar.animations.play('glow');
     altar.scale.setTo(0.5,0.5);
-    // altar.anchor.setTo(0.5, 0.5);
+    altar.anchor.setTo(0.5, 0.5);
+
+    baby = game.add.sprite(0, -100, 'anim', 'dead_body_animation/dead_body_animation0001.png');
+    baby.animations.add('festering', Phaser.Animation.generateFrameNames('dead_body_animation/dead_body_animation', 1, 32, '.png', 4), 19, true, false);
+    baby.animations.play('festering');
+    baby.scale.setTo(0.5,0.5);
+
+    baby.anchor.setTo(0.5, 0.5);
+    altar.addChild(baby);
+
     // altar.scale.setTo(2,2);
     // tweenTint(star, 0xCC4518, 0x2E1006);
   }
