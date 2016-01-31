@@ -31,7 +31,7 @@ window.onload = function() {
     function preload () {
       console.log('preload', game);
       todd.run_module_funcs('preload', game);
-      game.load.image('splash', 'assets/SplashArt.png');
+      game.load.image('splash', 'assets/splash_art.png');
     }
 
     function create () {
