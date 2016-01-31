@@ -3,6 +3,8 @@ var todd = {};
 todd.modules = {};
 layers = {};
 
+
+
 todd.add_module = function (name, funcs) {
   console.log('adding module ' + name);
   todd.modules[name] = funcs;
@@ -29,6 +31,7 @@ window.onload = function() {
     function preload () {
       console.log('preload', game);
       todd.run_module_funcs('preload', game);
+      game.load.image('splash', 'assets/SplashArt.png');
     }
 
     function create () {
@@ -44,8 +47,15 @@ window.onload = function() {
       layers.foreground.z = 0;
       layers.ui.z = 1000;
       todd.run_module_funcs('create', game);
+      var splash = game.add.sprite(0, -0, 'splash');
+      splash.inputEnabled = true;
+      splash.input.useHandCursor = true;
+      splash.events.onInputUp.add(destroy, this);
     }
 
+    function destroy(sprite){
+      sprite.destroy();
+    }
     function update () {
       todd.run_module_funcs('update', game);
     }
