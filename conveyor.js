@@ -13,7 +13,7 @@ var Conveyor = this.Conveyor = function(game, i) {
   this.addChild(w);
   w.scale.setTo(0.25,0.25);
 
-  w.animations.add('bob', Phaser.Animation.generateFrameNames('worker_animation/worker_animation', 1, 27, '.png', 4), 19, true, false);
+  w.animations.add('bob', Phaser.Animation.generateFrameNames('worker_animation/worker_animation', 1, 27, '.png', 4), 38, true, false);
   w.animations.play('bob');
 
   conveyors.push(this);
