@@ -25,7 +25,9 @@
       w.scale.setTo(0.5);
       c.addChild(w);
       conveyors.push(c);
+      layers.foreground.add(c);
       workers.push(w);
+      //layers.foreground.add(w);
     }
   }
 
