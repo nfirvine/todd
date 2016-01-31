@@ -1,11 +1,12 @@
 (function() {
   var conveyors = [];
+  var workers = [];
   function init(game) {
   }
 
   function preload(game) {
     game.load.image('conveyor', 'assets/conveyor.png');
-
+    game.load.image('worker', 'assets/worker.png');
   }
 
   function create(game) {
@@ -20,7 +21,11 @@
       if (!lefthand) {
         c.scale.x *= -1;
       }
+      var w = game.add.sprite(700, 0, 'worker');
+      w.scale.setTo(0.5);
+      c.addChild(w);
       conveyors.push(c);
+      workers.push(w);
     }
   }
 
