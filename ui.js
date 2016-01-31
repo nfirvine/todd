@@ -13,9 +13,9 @@
   function create(game) {
     var background = game.add.sprite(0,0, 'background');
     layers.background.add(background);
-    var trash_bin = game.add.sprite(500, 1300, 'trash_bin');
+    var trash_bin = game.add.sprite(450, 1300, 'trash_bin');
     layers.ui.add(trash_bin);
-    var bomb_hole = game.add.sprite(1400, 1300, 'bomb_hole');
+    var bomb_hole = game.add.sprite(1350, 1300, 'bomb_hole');
     layers.ui.add(bomb_hole);
     var soundtrack = game.add.audio('soundtrack', 1, true);
     soundtrack.play();
